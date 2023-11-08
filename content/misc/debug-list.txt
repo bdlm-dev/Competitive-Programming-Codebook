@@ -1,0 +1,22 @@
+- Pre-Submit:
+    - Check output is equivalent to provided test cases
+    - Test more cases if not confident
+        - Compute small test cases to test against
+    - Determine edge-cases
+- General:
+    - Re-read problem
+    - Explain problem & hence solution to teammate (mascot)
+    - Have a snack
+    - Check type casting in computation and output
+    - Division by zero?
+- Wrong Answer:
+    - Check output format
+    - Check boundary test cases
+    - Check '==' vs '>=' vs '<='
+    - Are values initialized & reset properly?
+- Time Limit Exceeded:
+    - Calculate time complexity
+    - Check loops will always complete
+    - Are constant factors reasonable?
+    - Is all code necessary?
+    - Are there inbuilt functions for the same tasks?

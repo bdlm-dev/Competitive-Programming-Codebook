@@ -1,0 +1,121 @@
+% FULL CREDIT TO
+% https://github.com/ToxicPie/codebook
+
+\ProvidesPackage{codebook}
+
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{fontspec}
+\RequirePackage[x11names]{xcolor}
+\RequirePackage{fancyhdr}
+\RequirePackage{graphicx}
+\RequirePackage{titlesec}
+\RequirePackage{tocbasic}
+\RequirePackage[xetex, pdfusetitle, hidelinks]{hyperref}
+\RequirePackage{minted}
+\RequirePackage{enumitem}
+
+% package options
+\newif\ifmono\monofalse
+\DeclareOption{mono}{\monotrue}
+\ProcessOptions\relax
+
+\ifmono
+    \setmainfont[
+        ItalicFont={Fira Mono Medium},
+        BoldItalicFont={Fira Mono Bold}
+    ]{Fira Mono Medium}
+    \setmonofont{Fira Mono Medium}
+\else
+    \setmainfont{Fira Sans}
+    \setmonofont{Fira Mono Medium}
+\fi
+
+
+% so dirty but effective
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{10pt}
+\setlength{\headheight}{12.1pt}
+\setlength{\textheight}{770pt}
+\setlength{\footskip}{20pt}
+\setlength{\voffset}{-55pt}
+\setlength{\textwidth}{550pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparpush}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\hoffset}{-50pt}
+\setlength{\columnsep}{15pt}
+\setlength{\columnseprule}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+
+\setlist{
+    leftmargin=16pt,
+    topsep=0pt plus 2pt minus 0pt,
+    partopsep=0pt plus 2pt minus 0pt,
+    itemsep=0pt plus 2pt minus 0pt
+}
+
+\titlespacing\section
+{0pt}{8pt plus 4pt minus 2pt}{-4pt plus 0pt minus 2pt}
+\titlespacing\subsection
+{0pt}{4pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection
+{0pt}{4pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+
+\definecolor{codeblue}{rgb}{0.06, 0.12, 0.80}
+\definecolor{codegreen}{rgb}{0.04, 0.50, 0.10}
+\definecolor{codeorange}{rgb}{0.96, 0.54, 0.04}
+
+
+% define py code highlighting :)
+\setminted{
+    tabsize=2,
+    mathescape=true,
+    breaklines,
+    breakanywhere
+}
+\newmintedfile[pyfile]{py}{
+}
+
+\newcommand{\code}[2]{
+  \subsection{#1}
+  \vspace{-1em}
+  \pyfile{#2}
+  \vspace{-2em}
+}
+
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\renewcommand{\contentsname}{Contents}
+
+% config commands
+\newcommand{\team}[2]{
+	\def\@teamname{#1}
+    \def\@teaminstitution{#2}
+}
+\newcommand{\codetheme}[1]{
+	\usemintedstyle{#1}
+}
+
+% defaults
+\team{indents are hard}{Brunel University London}
+\codetheme{default}
+
+\title{Codebook for \@teamname}
+\author{\@teamname}
+
+\fancyhead[L]{\@teamname\ (\@teaminstitution)}
+\fancyhead[R]{Page \thepage}
+\fancyfoot[C]{{
+    \footnotesize
+    Team: \@teamname\ from \@teaminstitution.
+    Last updated: \today.
+}}

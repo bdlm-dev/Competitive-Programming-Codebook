@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{\PYGZsh{} Example implementation of heap}
+\PYG{c+c1}{\PYGZsh{} Practically equivalent to minimum\PYGZhy{}spanning\PYGZhy{}tree}
+\PYG{c+c1}{\PYGZsh{} Example problem this solves:}
+\PYG{c+c1}{\PYGZsh{} Given N ropes of different lengths, find the minimum cost to connect these ropes, cost is the sum of their lengths}
+\PYG{k+kn}{import} \PYG{n+nn}{heapq}
+\PYG{k}{def} \PYG{n+nf}{min}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{):}
+    \PYG{n}{n} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)}
+    \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{heapify}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} transform arr into heap in\PYGZhy{}place}
+    \PYG{n}{res} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{while}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1}\PYG{p}{):}
+        \PYG{n}{first} \PYG{o}{=} \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{heappop}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)}
+        \PYG{n}{second} \PYG{o}{=} \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{heappop}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)}
+        \PYG{n}{res} \PYG{o}{+=} \PYG{n}{first} \PYG{o}{+} \PYG{n}{second}
+        \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{heappush}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{first} \PYG{o}{+} \PYG{n}{second}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{res}
+\PYG{n}{smallest\PYGZus{}k} \PYG{o}{=} \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{nsmallest}\PYG{p}{(}\PYG{n}{k}\PYG{p}{,} \PYG{n}{heap}\PYG{p}{)}
+\PYG{n}{largest\PYGZus{}k} \PYG{o}{=} \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{nlargest}\PYG{p}{(}\PYG{n}{k}\PYG{p}{,} \PYG{n}{heap}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Push to heap, pop \PYGZam{} return smallest}
+\PYG{n}{smallest} \PYG{o}{=} \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{heappushpop}\PYG{p}{(}\PYG{n}{heap}\PYG{p}{,} \PYG{n}{item}\PYG{p}{)}
+\end{Verbatim}

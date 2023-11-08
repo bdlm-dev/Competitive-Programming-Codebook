@@ -1,0 +1,48 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{class} \PYG{n+nc}{SegmentTree}\PYG{p}{:}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{nums}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{n} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{nums}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{4} \PYG{o}{*} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{n}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{nums} \PYG{o}{=} \PYG{n}{nums}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{build}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{def} \PYG{n+nf}{build}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{node}\PYG{p}{,} \PYG{n}{start}\PYG{p}{,} \PYG{n}{end}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{start} \PYG{o}{==} \PYG{n}{end}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{nums}\PYG{p}{[}\PYG{n}{start}\PYG{p}{]}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{start} \PYG{o}{+} \PYG{n}{end}\PYG{p}{)} \PYG{o}{//} \PYG{l+m+mi}{2}
+            \PYG{n}{left\PYGZus{}node} \PYG{o}{=} \PYG{n}{node} \PYG{o}{*} \PYG{l+m+mi}{2}
+            \PYG{n}{right\PYGZus{}node} \PYG{o}{=} \PYG{n}{node} \PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{+} \PYG{l+m+mi}{1}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{build}\PYG{p}{(}\PYG{n}{left\PYGZus{}node}\PYG{p}{,} \PYG{n}{start}\PYG{p}{,} \PYG{n}{mid}\PYG{p}{)}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{build}\PYG{p}{(}\PYG{n}{right\PYGZus{}node}\PYG{p}{,} \PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{end}\PYG{p}{)}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{left\PYGZus{}node}\PYG{p}{]} \PYG{o}{+} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{right\PYGZus{}node}\PYG{p}{]}
+    \PYG{k}{def} \PYG{n+nf}{query}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{L}\PYG{p}{,} \PYG{n}{R}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}query}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{L}\PYG{p}{,} \PYG{n}{R}\PYG{p}{)}
+    \PYG{k}{def} \PYG{n+nf}{\PYGZus{}query}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{node}\PYG{p}{,} \PYG{n}{start}\PYG{p}{,} \PYG{n}{end}\PYG{p}{,} \PYG{n}{L}\PYG{p}{,} \PYG{n}{R}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{R} \PYG{o}{\PYGZlt{}} \PYG{n}{start} \PYG{o+ow}{or} \PYG{n}{L} \PYG{o}{\PYGZgt{}} \PYG{n}{end}\PYG{p}{:}
+            \PYG{k}{return} \PYG{l+m+mi}{0}
+        \PYG{k}{if} \PYG{n}{L} \PYG{o}{\PYGZlt{}=} \PYG{n}{start} \PYG{o+ow}{and} \PYG{n}{R} \PYG{o}{\PYGZgt{}=} \PYG{n}{end}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]}
+        \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{start} \PYG{o}{+} \PYG{n}{end}\PYG{p}{)} \PYG{o}{//} \PYG{l+m+mi}{2}
+        \PYG{n}{left\PYGZus{}sum} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}query}\PYG{p}{(}\PYG{n}{node} \PYG{o}{*} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{start}\PYG{p}{,} \PYG{n}{mid}\PYG{p}{,} \PYG{n}{L}\PYG{p}{,} \PYG{n}{R}\PYG{p}{)}
+        \PYG{n}{right\PYGZus{}sum} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}query}\PYG{p}{(}\PYG{n}{node} \PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{end}\PYG{p}{,} \PYG{n}{L}\PYG{p}{,} \PYG{n}{R}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{left\PYGZus{}sum} \PYG{o}{+} \PYG{n}{right\PYGZus{}sum}
+    \PYG{k}{def} \PYG{n+nf}{update}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{index}\PYG{p}{,} \PYG{n}{value}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}update}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{index}\PYG{p}{,} \PYG{n}{value}\PYG{p}{)}
+    \PYG{k}{def} \PYG{n+nf}{\PYGZus{}update}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{node}\PYG{p}{,} \PYG{n}{start}\PYG{p}{,} \PYG{n}{end}\PYG{p}{,} \PYG{n}{index}\PYG{p}{,} \PYG{n}{value}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{start} \PYG{o}{==} \PYG{n}{end}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]} \PYG{o}{=} \PYG{n}{value}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{nums}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{=} \PYG{n}{value}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{start} \PYG{o}{+} \PYG{n}{end}\PYG{p}{)} \PYG{o}{//} \PYG{l+m+mi}{2}
+            \PYG{k}{if} \PYG{n}{start} \PYG{o}{\PYGZlt{}=} \PYG{n}{index} \PYG{o}{\PYGZlt{}=} \PYG{n}{mid}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}update}\PYG{p}{(}\PYG{n}{node} \PYG{o}{*} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{start}\PYG{p}{,} \PYG{n}{mid}\PYG{p}{,} \PYG{n}{index}\PYG{p}{,} \PYG{n}{value}\PYG{p}{)}
+            \PYG{k}{else}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}update}\PYG{p}{(}\PYG{n}{node} \PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{end}\PYG{p}{,} \PYG{n}{index}\PYG{p}{,} \PYG{n}{value}\PYG{p}{)}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{node} \PYG{o}{*} \PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{+} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{node} \PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{]}
+
+
+\PYG{n}{data} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}
+\PYG{n}{tree} \PYG{o}{=} \PYG{n}{SegmentTree}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}
+\PYG{n}{tree}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Update: Set the value at index 1 to 2}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tree}\PYG{o}{.}\PYG{n}{query}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{))} \PYG{c+c1}{\PYGZsh{} Query total in range [1, 4] inclusive}
+\end{Verbatim}

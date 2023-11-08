@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k+kn}{from} \PYG{n+nn}{collections} \PYG{k+kn}{import} \PYG{n}{defaultdict} \PYG{c+c1}{\PYGZsh{} no keyerror dict}
+\PYG{n}{d} \PYG{o}{=} \PYG{n}{defaultdict}\PYG{p}{(}\PYG{n}{default\PYGZus{}value}\PYG{p}{)} 
+\end{Verbatim}

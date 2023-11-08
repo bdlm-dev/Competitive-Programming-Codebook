@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{\PYGZsh{} probability\PYGZhy{}based primality test\PYGZhy{} \PYGZgt{}k more accurate, slower}
+\PYG{k}{def} \PYG{n+nf}{miller\PYGZus{}rabin}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{k}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n}{n} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{4}\PYG{p}{:} \PYG{k}{return} \PYG{n}{n} \PYG{o}{==} \PYG{l+m+mi}{2} \PYG{o+ow}{or} \PYG{n}{n} \PYG{o}{==} \PYG{l+m+mi}{3}
+    \PYG{k}{if} \PYG{n}{n} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{2} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:} \PYG{k}{return} \PYG{k+kc}{False}
+    \PYG{n}{d}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}
+    \PYG{k}{while} \PYG{n}{d} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{2} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{n}{d}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{n}{d} \PYG{o}{//} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{r} \PYG{o}{+} \PYG{l+m+mi}{1}
+    \PYG{k}{def} \PYG{n+nf}{witness}\PYG{p}{(}\PYG{n}{a}\PYG{p}{):}
+        \PYG{n}{x} \PYG{o}{=} \PYG{n+nb}{pow}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{d}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{x} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{o+ow}{or} \PYG{n}{x} \PYG{o}{==} \PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{:} \PYG{k}{return} \PYG{k+kc}{True}
+        \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{):}
+            \PYG{n}{x} \PYG{o}{=} \PYG{n+nb}{pow}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{x} \PYG{o}{==} \PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{:} \PYG{k}{return} \PYG{k+kc}{True}
+        \PYG{k}{return} \PYG{k+kc}{False}
+    \PYG{k}{return} \PYG{n+nb}{all}\PYG{p}{(}\PYG{n}{witness}\PYG{p}{(}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randint}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n+nb}{int}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{p}{(}\PYG{n+nb}{pow}\PYG{p}{(}\PYG{n}{n}\PYG{o}{.}\PYG{n}{bit\PYGZus{}length}\PYG{p}{(),} \PYG{l+m+mi}{2}\PYG{p}{))} \PYG{o}{**} \PYG{l+m+mf}{0.5}\PYG{p}{))))} \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{k}\PYG{p}{))}
+\end{Verbatim}

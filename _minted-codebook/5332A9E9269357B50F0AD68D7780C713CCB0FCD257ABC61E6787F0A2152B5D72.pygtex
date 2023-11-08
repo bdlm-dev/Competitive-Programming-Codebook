@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k+kn}{import} \PYG{n+nn}{bisect}
+\PYG{c+c1}{\PYGZsh{} Returns index of x or \PYGZhy{}1 if not found}
+\PYG{k}{def} \PYG{n+nf}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{):}
+    \PYG{n}{i} \PYG{o}{=} \PYG{n}{bisect}\PYG{o}{.}\PYG{n}{bisect\PYGZus{}left}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{i} \PYG{o}{!=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{arr}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{i}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+\end{Verbatim}

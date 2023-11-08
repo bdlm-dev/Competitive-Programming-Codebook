@@ -1,5 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
-\PYG{k+kn}{from} \PYG{n+nn}{collections} \PYG{k+kn}{import} \PYG{n}{Counter}
-\PYG{n}{c} \PYG{o}{=} \PYG{n}{Counter}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}mississippi\PYGZdq{}}\PYG{p}{)} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}i\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}s\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}p\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}m\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}}
-\PYG{n}{c}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}missouri\PYGZdq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} adds counts of inp to counts}
-\end{Verbatim}

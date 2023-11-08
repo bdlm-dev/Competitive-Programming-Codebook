@@ -1,9 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
-\PYG{c+c1}{\PYGZsh{} Top\PYGZhy{}Down DP}
-\PYG{c+c1}{\PYGZsh{} Remember previous computation result, prevent unnecessary computation}
-\PYG{k+kn}{import} \PYG{n+nn}{functools}
-\PYG{n+nd}{@functools}\PYG{o}{.}\PYG{n}{lru\PYGZus{}cache}\PYG{p}{(}\PYG{n}{maxsize}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{)}
-\PYG{k}{def} \PYG{n+nf}{fibonacci}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
-    \PYG{k}{if} \PYG{n}{n} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{2}\PYG{p}{:} \PYG{k}{return} \PYG{n}{n}
-    \PYG{k}{return} \PYG{n}{fibonacci}\PYG{p}{(}\PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{+} \PYG{n}{fibonacci}\PYG{p}{(}\PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{p}{)}
-\end{Verbatim}

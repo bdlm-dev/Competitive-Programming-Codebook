@@ -1,8 +1,9 @@
+from math import ceil, sqrt
 def sieve_of_eratosthenes(n):
-    primes, p = [True for _ in range(n+1)], 2
-    while p * p <= n:
-        if primes[p]:
-            for i in range(p * p, n + 1, p):
-                primes[i] = False
-        p += 1
-    return [i for i in range(2, n + 1) if primes[i]]
+    bool_array = [False, False] + [True] * n
+    for i in range(2, int(ceil(sqrt(n)))):
+        if bool_array[i]:
+            for j in range(i * i, n + 1, i):
+                bool_array[j] = False
+    primes = [i for i in range(n + 1) if bool_array[i]]
+    return primes

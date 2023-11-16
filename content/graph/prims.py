@@ -2,7 +2,7 @@ def minimum_spanning_tree(gr):
     """ Uses prim's algorithm to return the minimum
     cost spanning tree in a undirected connected graph.
     Works only with undirected and connected graphs """
-    s = gr.nodes()[0]
+    s = list(gr.nodes()[0])
     nodes_explored = set([s])
     nodes_unexplored = gr.nodes()
     nodes_unexplored.remove(s)

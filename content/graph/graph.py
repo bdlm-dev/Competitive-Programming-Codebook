@@ -34,7 +34,7 @@ class graph(object):
             self.add_edge(edge)
     def nodes(self):
         """Returns a list of nodes in the graph"""
-        return self.node_neighbors.keys()
+        return list(self.node_neighbors.keys())
     def has_edge(self, edge):
         """Returns a boolean to indicate whether an edge exists in the
         graph. An edge, here, is a pair of node like C(m, n) or a tuple"""
@@ -44,7 +44,7 @@ class graph(object):
         """Returns a list of neighbors for a node"""
         if not self.has_node(node):
             raise "Node %s not in graph" % node
-        return self.node_neighbors[node].keys()
+        return list(self.node_neighbors[node].keys())
     def del_node(self, node):
         """Deletes a node from a graph"""
         for each in list(self.neighbors(node)):

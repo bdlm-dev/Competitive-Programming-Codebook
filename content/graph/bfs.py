@@ -1,3 +1,4 @@
+from collections import deque
 def BFS(gr, s):
     """ Breadth first search
     Returns list of nodes that are "findable" from s """

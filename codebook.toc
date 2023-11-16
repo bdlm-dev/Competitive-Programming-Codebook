@@ -12,28 +12,37 @@
 \contentsline {subsection}{\numberline {2.3}Double-Ended Queue}{2}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Segment Tree + Example}{2}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Heap}{2}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Maths}{2}{section.3}%
-\contentsline {subsection}{\numberline {3.1}GCD (Euclidean Algorithm)}{2}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Extended GCD}{2}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Modular Inverse}{2}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Sieve of Eratosthenes}{2}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Miller-Rabin}{2}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Pollard's Rho}{2}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Numeric}{2}{section.4}%
-\contentsline {section}{\numberline {5}Flow}{2}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Sorting}{2}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Ternary Search}{3}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Binary Search}{3}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Memoization (+Fibonacci)}{3}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Tabulation}{3}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Graph}{3}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Modelling}{3}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Undirected Graph}{3}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Directed Graph}{4}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Depth-first Search}{4}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Breadth-first Search}{4}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Shortest Hops}{4}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Shortest Path - Dijkstra's }{5}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Prim's Min-Cost Spanning Tree}{5}{subsection.6.8}%
-\contentsline {section}{\numberline {7}Geometry}{5}{section.7}%
-\contentsline {section}{\numberline {8}Strings}{5}{section.8}%
+\contentsline {subsection}{\numberline {2.6}Union Find}{2}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Maths}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}GCD (Euclidean Algorithm)}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Extended GCD}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Modular Inverse}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Sieve of Eratosthenes}{3}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Miller-Rabin}{3}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Pollard's Rho}{3}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Numeric}{3}{section.4}%
+\contentsline {section}{\numberline {5}Flow}{3}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Sorting}{3}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Quicksort}{3}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Ternary Search}{3}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Binary Search}{3}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Memoization (+Fibonacci)}{3}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Tabulation}{3}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Dinic's Maximum Flow}{3}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Dinic's - Example}{4}{subsection.5.8}%
+\contentsline {section}{\numberline {6}Graph}{4}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Modelling}{4}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Undirected Graph}{5}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Directed Graph}{5}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Depth-first Search}{6}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Breadth-first Search}{6}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Shortest Hops}{6}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Shortest Path - Dijkstra's }{6}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Prim's MST}{6}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Kruskal's MST}{7}{subsection.6.9}%
+\contentsline {section}{\numberline {7}Geometry}{7}{section.7}%
+\contentsline {subsection}{\numberline {7.1}2D Operators}{7}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}CCW Angular Sort}{7}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Graham Scan Convex Hull}{7}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Winding Number Point Inclusion}{7}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Minimum Enclosing Circle}{7}{subsection.7.5}%

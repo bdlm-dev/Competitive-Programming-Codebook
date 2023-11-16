@@ -13,6 +13,7 @@ def min(arr):
         res += first + second
         heapq.heappush(arr, first + second)
     return res
+# heap operators
 smallest_k = heapq.nsmallest(k, heap)
 largest_k = heapq.nlargest(k, heap)
 # Push to heap, pop & return smallest
